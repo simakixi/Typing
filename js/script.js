@@ -136,6 +136,7 @@ const letter = {
 var Question = [] //問題文を一文字ずつひらがなに分けて格納
 var QuestionLatin = [];   //問題文を一文字ずつローマ字に分けたものを格納
 var part = [];  //現在入力中の文字のローマ字をすべて格納する(if文判定のため)。こいつに入ってる要素を付けたり消したりすることでどうにかする
+var nextpart = [];
 const kanji = ["世界"];
 const word = ["せかい","さんご"];
 
@@ -152,3 +153,4 @@ for(i=0;i<Question.length;i++){
     QuestionLatin[i] = letter[Question[i]][0];
 }
 console.log(QuestionLatin);
+
