@@ -139,18 +139,28 @@ var part = [];  //現在入力中の文字のローマ字をすべて格納す�
 var nextpart = [];
 const kanji = ["世界"];
 const word = ["せかい","さんご"];
+var partcount = 0;
 
 Question = word[0].split("");
-console.log(Question);
+console.log("ひらがな:"+Question);
 for(i=0;i<Question.length;i++){
     QuestionLatin[i] = letter[Question[i]][0];
 }
-console.log(QuestionLatin);
+console.log("ローマ字:"+QuestionLatin);
 
-Question = word[1].split("");
-console.log(Question);
-for(i=0;i<Question.length;i++){
-    QuestionLatin[i] = letter[Question[i]][0];
+for(i=0;i<letter[Question[0]].length;i++){
+    part[i] = letter[Question[0]][i];
 }
-console.log(QuestionLatin);
+console.log(part);
 
+document.addEventListener('keydown', function(event) {  //キー入力を受け取る
+    key = event.key.toUpperCase();  //キー入力を大文字にして代入する
+    check(key); //入力した文字をチェックする
+});
+
+function check(input){
+    if(input==part[0].charAt(partcount)){
+        console.log("あってるで");
+        partcount++;
+    }
+}
